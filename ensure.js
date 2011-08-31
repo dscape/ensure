@@ -1,17 +1,15 @@
 var _      = require('underscore')
   , vows   = require('vows')
   , assert = require('assert')
-  , batch  = {}
-  , f, ok, test_names;
+  , batch  = {};
 
 
 module.exports = exports = function(name,tests,module) {
+  var f, ok, test_names;
   test_names = _.filter(_.keys(tests), function(e){ return e.indexOf('_ok') === -1; });
   _.foldl(test_names, function(memo,e) {
-    t  = tests[e];
-    ok = tests[e + '_ok'];
-    memo[e] = { topic: function () { t(this.callback); }
-              , ok: ok 
+    memo[e] = { topic: function () { tests[e](this.callback); }
+              , ok: tests[e + '_ok']
               }; 
     return memo; }, batch);
   vows.describe('foo').addBatch(batch).exportTo(module);
