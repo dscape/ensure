@@ -23,4 +23,8 @@
       
       ensure('foo', tests, module);
 
+Now run it:
+
+      node foo.js
+
 [1]: http://npmjs.org

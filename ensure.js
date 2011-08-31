@@ -8,8 +8,8 @@ var _      = require('underscore')
 module.exports = exports = function(name,tests,module) {
   test_names = _.filter(_.keys(tests), function(e){ return e.indexOf('_ok') === -1; });
   _.foldl(test_names, function(memo,e) {
-    t  = eval('tests.'+ e);
-    ok = eval('tests.'+ e + '_ok');
+    t  = tests[e];
+    ok = tests[e + '_ok'];
     memo[e] = { topic: function () { t(this.callback); }
               , ok: ok 
               }; 
