@@ -2,7 +2,7 @@
 
 `ensure` is just a simple way to use vows without all the extra stuff
 
-# instalation
+# installation
 
 1. install [npm][1]
 2. `npm install nano`
