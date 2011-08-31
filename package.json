@@ -1,0 +1,12 @@
+{ "name": "ensure"
+, "description": "vows made easy"
+, "homepage": "http://github.com/dscape/ensure"
+, "repository": "git://github.com/dscape/ensure"
+, "version": "0.0.1"
+, "author": "Nuno Job <nunojobpinto@gmail.com> (http://nunojob.com)"
+, "keywords": ["vows", "testing"]
+, "dependencies": {"vows": "~0.5.10", "underscore": "~1.1.7"}
+, "scripts": { "test": "./test/run" }
+, "main": "./ensure.js"
+, "engines" : { "node": ">=0.2.6" }
+}
