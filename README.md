@@ -9,7 +9,7 @@
 
 # usage
 
-      var ensure = require('../ensure')
+      var ensure = require('ensure')
         , assert = require('assert')
         , tests = exports;
       
