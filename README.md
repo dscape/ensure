@@ -5,7 +5,7 @@
 # installation
 
 1. install [npm][1]
-2. `npm install nano`
+2. `npm install ensure`
 
 # usage
 
@@ -22,3 +22,5 @@
       };
       
       ensure('foo', tests, module);
+
+[1]: http://npmjs.org
