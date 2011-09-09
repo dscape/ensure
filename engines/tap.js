@@ -14,7 +14,7 @@ module.exports = exports = function(name,tests,module,selected) {
   test(name, function (t) {
     t.plan(total);
     test_names.forEach(function(name) {
-      tests[name](tests[name+'_ok'](t));
+      tests[name](function () { this.t = t; return tests[name+'_ok'] }());
     });
   });
 };
