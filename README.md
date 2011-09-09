@@ -1,6 +1,6 @@
 # ensure
 
-`ensure` is just a simple way to test in node.js without all the extra stuff
+`ensure` is just a simple way to test in node.js
 
 # installation
 
@@ -54,13 +54,13 @@ you can also set `ensure` to use a different test engine. for now we have [tap][
   ensure(__filename,tests,module,process.argv[2]);
 ```
 
-to run test tap you can do:
+to run test `tap` you can do:
 
 ```sh
   node test/tap.js tap
 ```
 
-tap is the test name and is optional (by default all tests run).
+`tap` is the test name and _is_ optional (by default all tests run).
 
 # contribute
 
