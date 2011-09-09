@@ -7,7 +7,7 @@
 , "keywords": ["vows", "testing"]
 , "dependencies": 
   { "vows": "~0.5.10"
-  , "node-tap": "0.0.9"
+  , "tap": "0.0.9"
   , "underscore": "~1.1.7"
   }
 , "scripts": { "test": "./test/run" }
