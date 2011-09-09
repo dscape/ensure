@@ -75,3 +75,5 @@ always make sure all the tests pass before sending in your pull request!
 [1]: http://npmjs.org
 [2]: http://github.com/dscape/ensure/issues
 [3]: http://caos.di.uminho.pt/
+[4]: https://github.com/isaacs/node-tap
+[5]: http://vowsjs.org/
