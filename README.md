@@ -38,11 +38,29 @@ an extra parameter is available to allow you to define only some tests from a sp
   ensure('foo',tests,module,process.argv[2]);
 ```
 
-you can also set `ensure` to use a different test engine. for now we have [tap][4] and [vows][5] available
+you can also set `ensure` to use a different test engine. for now we have [tap][4] and [vows][5] available with `vows` by default. here's an example using tap
 
 ```js
-  require('ensure').use('vows');
+  var ensure = require('ensure').use('tap')
+    , tests = exports
+    ;
+
+  tests.tap    = function (cb) { cb('foo'); };
+  tests.tap_ok = function (value)  {
+    var t = this.t; // get the assertions from tap engine
+    t.equal(value,'foo','foo test worked'); 
+  };
+
+  ensure(__filename,tests,module,process.argv[2]);
 ```
+
+to run test tap you can do:
+
+```sh
+  node test/tap.js tap
+```
+
+tap is the test name and is optional (by default all tests run).
 
 # contribute
 
