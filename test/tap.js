@@ -14,4 +14,4 @@ tests.plan_works_ok = function (value)  {
   t.equal(value,'bar');
 };
 
-ensure((__filename + '_tap'),tests,module);
+ensure(__filename,tests,module,process.argv[2]);

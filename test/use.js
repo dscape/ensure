@@ -6,4 +6,4 @@ var ensure = require('../ensure').use('vows')
 tests.vows    = function (cb) { cb(true); };
 tests.vows_ok = function (t)  { assert.ok(t); };
 
-ensure((__filename + '_use'),tests,module);
+ensure(__filename ,tests,module);
