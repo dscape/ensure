@@ -1,11 +1,15 @@
 { "name": "ensure"
-, "description": "vows made easy"
+, "description": "node.js testing made easy"
 , "homepage": "http://github.com/dscape/ensure"
 , "repository": "git://github.com/dscape/ensure"
 , "version": "0.1.0"
 , "author": "Nuno Job <nunojobpinto@gmail.com> (http://nunojob.com)"
 , "keywords": ["vows", "testing"]
-, "dependencies": {"vows": "~0.5.10", "underscore": "~1.1.7"}
+, "dependencies": 
+  { "vows": "~0.5.10"
+  , "node-tap": "0.0.9"
+  , "underscore": "~1.1.7"
+  }
 , "scripts": { "test": "./test/run" }
 , "main": "./ensure.js"
 , "engines" : { "node": ">=0.2.6" }

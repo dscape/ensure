@@ -1,6 +1,6 @@
 # ensure
 
-`ensure` is just a simple way to use vows without all the extra stuff
+`ensure` is just a simple way to test in node.js without all the extra stuff
 
 # installation
 
@@ -9,28 +9,40 @@
 
 # usage
 
-      var ensure = require('ensure')
-        , assert = require('assert')
-        , tests = exports;
-      
-      tests.foo = function (callback) {
-        callback(true);
-      };
-      
-      tests.foo_ok = function (t) {
-        assert.ok(t);
-      };
-      
-      ensure('foo', tests, module);
+```js
+  var ensure = require('ensure')
+    , assert = require('assert')
+    , tests = exports
+    ;
 
+  tests.foo = function (callback) {
+    callback(true);
+  };
+
+  tests.foo_ok = function (t) {
+    assert.ok(t);
+  };
+
+  ensure('foo', tests, module);
+```
 run it:
 
-      node foo.js
+```sh
+  node foo.js
+```
 
 an extra parameter is available to allow you to define only some tests from a specific file. you can do this by providing a comma separated list of tests you want to run, e.g. `ensure('foo',tests,module,'foo,bar');`. you can use this in combination with `process.argv` to choose what tests to run from the shell:
 
-      // assuming node foo.js foo,bar
-      ensure('foo',tests,module,process.argv[2]);
+```js
+  // assuming node foo.js foo,bar
+  ensure('foo',tests,module,process.argv[2]);
+```
+
+you can also set `ensure` to use a different test engine. for now we have [tap][4] and [vows][5] available
+
+```js
+  require('ensure').use('vows');
+```
 
 # contribute
 
