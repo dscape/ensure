@@ -2,9 +2,9 @@
 , "description": "node.js testing made easy"
 , "homepage": "http://github.com/dscape/ensure"
 , "repository": "git://github.com/dscape/ensure"
-, "version": "0.2.1"
+, "version": "0.2.2"
 , "author": "Nuno Job <nunojobpinto@gmail.com> (http://nunojob.com)"
-, "keywords": ["vows", "testing"]
+, "keywords": ["vows", "node-tap", "tap", "testing", "tests"]
 , "dependencies": 
   { "vows": "~0.5.10"
   , "tap": "0.0.9"
