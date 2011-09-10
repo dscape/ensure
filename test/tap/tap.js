@@ -1,4 +1,4 @@
-var ensure = require('../ensure').use('tap')
+var ensure = require('../../ensure').use('tap')
   , tests = exports
   ;
 
