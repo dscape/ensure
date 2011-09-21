@@ -1,4 +1,4 @@
-var DEFAULT_ENGINE = 'vows'
+var DEFAULT_ENGINE = 'tap'
   , fs = require('fs')
   ;
 

@@ -5,4 +5,4 @@ for s in $(ls -d $tests/vows);
 do
   for f in $s/*.js; do node $f; done;
 done;
-$tests/bin/tap.js $tests/tap
+$tests/../bin/tap.js $tests/tap
