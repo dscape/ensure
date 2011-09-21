@@ -1,5 +1,5 @@
-var _      = require('underscore')
-  , tap   = require('tap')
+var _    = require('underscore')
+  , tap  = require('tap')
   , test = tap.test
   , plan = tap.plan
   ;
@@ -13,8 +13,7 @@ module.exports = exports = function(name,tests,module,selected) {
   test(name, function (t) {
     test_names.forEach(function(name) { // quick'n'dirty static analysis
       var f_body  = tests[name+'_ok'].toString()
-        , var_name = /(\w)\s*=\s*this\.t/.exec(f_body)[1] + '\\.'
-        , count = f_body.match(new RegExp(var_name, ['g', 'm'])).length
+        , count = f_body.match(/this\.t/gm).length
         ;
       total += count;
     });

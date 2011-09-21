@@ -11,7 +11,6 @@
 
 ```js
   var ensure = require('ensure')
-    , assert = require('assert')
     , tests = exports
     ;
 
@@ -20,7 +19,7 @@
   };
 
   tests.foo_ok = function (t) {
-    assert.ok(t);
+    this.t.ok(t);
   };
 
   ensure('foo', tests, module);
@@ -38,33 +37,35 @@ an extra parameter is available to allow you to define only some tests from a sp
   ensure('foo',tests,module,process.argv[2]);
 ```
 
-you can also set `ensure` to use a different test engine. for now we have [tap][4] and [vows][5] available with `vows` by default. here's an example using tap
+you can also set `ensure` to use a different test engine. for now we have [tap][4] and [vows][5] available with `tap` by default. here's an example using vows
 
 ```js
-  var ensure = require('ensure').use('tap')
-    , tests = exports
+  var ensure = require('ensure')
+    , assert = require('assert')
+    , tests  = exports
     ;
 
-  tests.tap    = function (cb) { cb('foo'); };
-  tests.tap_ok = function (value)  {
-    var t = this.t; // get the assertions from tap engine
-    t.equal(value,'foo','foo test worked'); 
+  tests.vows    = function (cb) { cb('foo'); };
+  tests.vows_ok = function (value)  {
+    assert.equal(value,'foo','foo test worked'); 
   };
 
   ensure(__filename,tests,module,process.argv[2]);
 ```
 
-to run test `tap` you can do:
+to run test `vows` you can do:
 
 ```sh
-  node test/tap.js tap
+  node vows.js vows
 ```
 
-`tap` is the test name and _is_ optional (by default all tests run).
+`vows` is the test name and _is_ optional (by default all tests run).
+
+*note:* `this.t` should not be placed in a variable. `ensure` uses a very simple static analysis algorithm to determine how many assertions exist in your callback. if you think this is not satisfactory feel free to make a pull request with better static analysis code.
 
 # contribute
 
-everyone is welcome to contribute. patches, bugfixes, new features
+everyone is welcome to contribute. patches, bug-fixes, new features
 
 1. create an [issue][2] on github so the community can comment on your idea
 2. fork `nano` in github
