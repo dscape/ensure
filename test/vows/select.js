@@ -1,4 +1,4 @@
-var ensure = require('../../ensure')
+var ensure = require('../../ensure').use('vows')
   , assert = require('assert')
   , tests = exports;
 
