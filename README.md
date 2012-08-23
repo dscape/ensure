@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/dscape/ensure.png)](http://travis-ci.org/dscape/ensure)
 # ensure
 
 `ensure` is just a simple way to test in node.js
